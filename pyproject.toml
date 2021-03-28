@@ -1,0 +1,35 @@
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.poetry]
+name = "keyword-extractor"
+version = "0.1.0"
+description = "Extract keywords from documents with spaCy and scikit-learn"
+authors = ["Scott Stevenson <scott@stevenson.io>"]
+license = "ISC"
+
+[tool.poetry.scripts]
+keyword-extractor = "keyword_extractor:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+scikit-learn = "^0.24.1"
+spacy = "^3.0.5"
+tabulate = "^0.8.9"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.9.0"
+isort = "^5.8.0"
+mypy = "^0.812"
+pytest = "^6.2.2"
+pytest-cov = "^2.11.1"
+nox = "^2020.12.31"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
