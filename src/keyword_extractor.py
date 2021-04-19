@@ -234,12 +234,14 @@ def parse_args(argv: List[str]) -> argparse.Namespace:
         Parsed command line arguments.
 
     """
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
     parser.add_argument(
         "-n",
         default=5,
         type=int,
-        help="Number of keywords to extract (default 5)",
+        help="Number of keywords to extract",
     )
     parser.add_argument(
         "paths",

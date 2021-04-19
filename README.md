@@ -46,7 +46,7 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -n N        Number of keywords to extract (default 5)
+  -n N        Number of keywords to extract (default: 5)
 $ keyword-extractor example_doc.txt
 ╒═════════╤═══════════════╤═════════════════╤═══════════════════════════════════════════════════════════════════════╕
 │ Word    │   Occurrences │ Documents       │ Sentences                                                             │
