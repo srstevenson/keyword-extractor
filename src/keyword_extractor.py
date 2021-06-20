@@ -2,8 +2,8 @@ import argparse
 import pathlib
 import sys
 import textwrap
+from collections.abc import Generator, Iterable
 from dataclasses import dataclass, field
-from typing import Dict, Generator, Iterable, List, Set
 
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -43,15 +43,15 @@ class KeywordMetadata:
 
     keyword: str
     occurrences: int = 0
-    document_names: Set[str] = field(default_factory=set)
-    sentences: List[str] = field(default_factory=list)
+    document_names: set[str] = field(default_factory=set)
+    sentences: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
 class KeywordSummary:
     """Summary of extracted keywords."""
 
-    data: Dict[str, KeywordMetadata]
+    data: dict[str, KeywordMetadata]
 
     def __str__(self) -> str:
         """Return a formatted table containing the summary.
@@ -111,7 +111,7 @@ class KeywordExtractor:
         )
         self.language_model.add_pipe("sentencizer")
         self.tfidf = TfidfVectorizer(max_features=n_keywords)
-        self.keywords: Set[str] = set()
+        self.keywords: set[str] = set()
 
     @staticmethod
     def _lemmatise_and_remove_stops(
@@ -134,7 +134,7 @@ class KeywordExtractor:
             if not token.is_stop and not token.is_punct:
                 yield token.lemma_.lower()
 
-    def fit(self, documents: Iterable[Document]) -> List[str]:
+    def fit(self, documents: Iterable[Document]) -> list[str]:
         """Fit the keyword extractor to documents.
 
         This finds the most prevalent keywords, applying tf-idf across
@@ -220,7 +220,7 @@ class KeywordExtractor:
         return self.transform(documents)
 
 
-def parse_args(argv: List[str]) -> argparse.Namespace:
+def parse_args(argv: list[str]) -> argparse.Namespace:
     """Parse command line arguments.
 
     Parameters
