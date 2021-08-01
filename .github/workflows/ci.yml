@@ -22,6 +22,8 @@ jobs:
           poetry run python3 -m spacy download en_core_web_sm
       - name: Run Nox
         run: poetry run nox
+      - name: Create XML coverage report
+        run: poetry run coverage xml
       - name: Upload test coverage report
         uses: codecov/codecov-action@v2.0.2
         with:
