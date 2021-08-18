@@ -147,7 +147,7 @@ class KeywordExtractor:
 
         Returns
         -------
-        List[str]
+        list[str]
             A list of the most prevalent keywords.
 
         """
@@ -225,7 +225,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
     Parameters
     ----------
-    argv : List[str]
+    argv : list[str]
         Command line arguments.
 
     Returns
