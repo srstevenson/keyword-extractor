@@ -17,7 +17,7 @@ keyword-extractor = "keyword_extractor:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-scikit-learn = "^0.24.2"
+scikit-learn = "^1.0"
 spacy = "^3.1.2"
 tabulate = "^0.8.9"
 
