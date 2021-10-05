@@ -163,7 +163,7 @@ class KeywordExtractor:
             " ".join(token for token in sentence)
             for sentence in lemmatised_sentences
         )
-        self.keywords.update(self.tfidf.get_feature_names())
+        self.keywords.update(self.tfidf.get_feature_names_out())
         return list(self.keywords)
 
     def transform(self, documents: Iterable[Document]) -> KeywordSummary:
