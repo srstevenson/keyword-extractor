@@ -19,7 +19,7 @@ license = "ISC"
 keyword-extractor = "keyword_extractor:main"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<4.0"
 scikit-learn = "^1.0"
 spacy = "^3.3.0"
 tabulate = "^0.8.9"
