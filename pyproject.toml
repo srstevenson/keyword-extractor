@@ -22,7 +22,7 @@ spacy = "^3.1.2"
 tabulate = "^0.8.9"
 
 [tool.poetry.dev-dependencies]
-black = "^21.9b0"
+black = "^21.10b0"
 flake8 = "^3.9.2"
 isort = "^5.9.3"
 mypy = "^0.910"
