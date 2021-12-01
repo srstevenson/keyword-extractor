@@ -45,7 +45,7 @@ testing = ["pytest (>=4.6)", "pytest-flake8", "pytest-cov", "pytest-black (>=0.3
 
 [[package]]
 name = "black"
-version = "21.10b0"
+version = "21.11b1"
 description = "The uncompromising code formatter."
 category = "dev"
 optional = false
@@ -56,7 +56,7 @@ click = ">=7.1.2"
 mypy-extensions = ">=0.4.3"
 pathspec = ">=0.9.0,<1"
 platformdirs = ">=2"
-regex = ">=2020.1.8"
+regex = ">=2021.4.4"
 tomli = ">=0.2.6,<2.0.0"
 typing-extensions = [
     {version = ">=3.10.0.0", markers = "python_version < \"3.10\""},
@@ -837,7 +837,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c891aae432450a1fc6a000734f5afaffbc7a43d5bb62785e1f85985e81dbe27f"
+content-hash = "28f3f33134497a9074e53618095ac749db3c085ce19edae0bcb3664b541d9f66"
 
 [metadata.files]
 argcomplete = [
@@ -857,8 +857,8 @@ attrs = [
     {file = "backports.entry_points_selectable-1.1.0.tar.gz", hash = "sha256:988468260ec1c196dab6ae1149260e2f5472c9110334e5d51adcb77867361f6a"},
 ]
 black = [
-    {file = "black-21.10b0-py3-none-any.whl", hash = "sha256:6eb7448da9143ee65b856a5f3676b7dda98ad9abe0f87fce8c59291f15e82a5b"},
-    {file = "black-21.10b0.tar.gz", hash = "sha256:a9952229092e325fe5f3dae56d81f639b23f7131eb840781947e4b2886030f33"},
+    {file = "black-21.11b1-py3-none-any.whl", hash = "sha256:802c6c30b637b28645b7fde282ed2569c0cd777dbe493a41b6a03c1d903f99ac"},
+    {file = "black-21.11b1.tar.gz", hash = "sha256:a042adbb18b3262faad5aff4e834ff186bb893f95ba3a8013f09de1e5569def2"},
 ]
 blis = [
     {file = "blis-0.7.4-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:5b403deb2ad5515e1edb3c0867bccb5b974b461f24283d9219a3a761fd6dacc6"},
