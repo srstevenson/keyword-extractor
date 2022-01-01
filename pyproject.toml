@@ -29,7 +29,7 @@ mypy = "^0.930"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 nox = "^2021.6.12"
-types-tabulate = "^0.8.3"
+types-tabulate = "^0.8.4"
 pyupgrade = "^2.29.1"
 
 [build-system]
