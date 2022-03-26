@@ -5,14 +5,14 @@
 [![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/keyword-extractor?label=Coverage)](https://codecov.io/gh/srstevenson/keyword-extractor)
 
 A toy package for extracting keywords from plain text documents. Pre-processing
-is carried out using spaCy (tokenisation, removal of stop words, and
-lemmatisation) and keywords are selected by applying tf-idf over sentences,
-using the implementation in scikit-learn.
+is carried out using [spaCy][spacy] (tokenisation, removal of stop words, and
+lemmatisation) and keywords are selected by applying [tf-idf][tf-idf] over
+sentences, using the implementation in [scikit-learn][scikit-learn].
 
 ## Usage
 
-Poetry is used for packaging and dependency management. Install the package and
-its dependencies with:
+[Poetry][poetry] is used for packaging and dependency management. Install the
+package and its dependencies with:
 
 ```bash
 poetry install
@@ -25,7 +25,7 @@ poetry run python3 -m spacy download en_core_web_sm
 ```
 
 To check everything is working, run the linting, type checking, and unit testing
-with nox:
+with [Nox][nox]:
 
 ```bash
 poetry run nox
@@ -123,3 +123,9 @@ $ keyword-extractor example_doc.txt
 │         │               │                 │ Rick and Morty forever 100 times.                                     │
 ╘═════════╧═══════════════╧═════════════════╧═══════════════════════════════════════════════════════════════════════╛
 ```
+
+[nox]: https://nox.thea.codes/
+[poetry]: https://python-poetry.org/
+[scikit-learn]: https://scikit-learn.org/
+[spacy]: https://spacy.io/
+[tf-idf]: https://en.wikipedia.org/wiki/Tf%E2%80%93idf
