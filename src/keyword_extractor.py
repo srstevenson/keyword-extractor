@@ -151,13 +151,11 @@ class KeywordExtractor:
             A list of the most prevalent keywords.
 
         """
-        # TODO(srstevenson): Remove `type: ignore` comments once
-        # https://github.com/explosion/spaCy/issues/8772 is resolved.
         texts = (document.text for document in documents)
-        lemmatised_sentences = (  # type: ignore[var-annotated]
+        lemmatised_sentences = (
             self._lemmatise_and_remove_stops(sentence)
-            for document in self.language_model.pipe(texts)  # type: ignore[arg-type]
-            for sentence in document.sents  # type: ignore[attr-defined]
+            for document in self.language_model.pipe(texts)
+            for sentence in document.sents
         )
         self.tfidf.fit(
             " ".join(token for token in sentence)
