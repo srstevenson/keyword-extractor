@@ -10,6 +10,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from spacy.tokens.token import Token
 from tabulate import tabulate
 
+Keyword = str
+
 
 @dataclass(frozen=True)
 class Document:
@@ -41,7 +43,7 @@ class Document:
 class KeywordMetadata:
     """Metadata for occurrences of an extracted keyword."""
 
-    keyword: str
+    keyword: Keyword
     occurrences: int = 0
     document_names: set[str] = field(default_factory=set)
     sentences: list[str] = field(default_factory=list)
@@ -51,7 +53,7 @@ class KeywordMetadata:
 class KeywordSummary:
     """Summary of extracted keywords."""
 
-    data: dict[str, KeywordMetadata]
+    data: dict[Keyword, KeywordMetadata]
 
     def __str__(self) -> str:
         """Return a formatted table containing the summary.
@@ -134,7 +136,7 @@ class KeywordExtractor:
             if not token.is_stop and not token.is_punct:
                 yield token.lemma_.lower()
 
-    def fit(self, documents: Iterable[Document]) -> list[str]:
+    def fit(self, documents: Iterable[Document]) -> list[Keyword]:
         """Fit the keyword extractor to documents.
 
         This finds the most prevalent keywords, applying tf-idf across
@@ -147,7 +149,7 @@ class KeywordExtractor:
 
         Returns
         -------
-        list[str]
+        list[Keyword]
             A list of the most prevalent keywords.
 
         """
