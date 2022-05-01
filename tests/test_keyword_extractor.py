@@ -51,7 +51,7 @@ def test_document_from_path() -> None:
 
 
 @pytest.mark.parametrize(
-    "n_keywords_arg,n_keywords_attr", [(None, 10), (5, 5)]
+    ("n_keywords_arg", "n_keywords_attr"), [(None, 10), (5, 5)]
 )
 def test_keyword_extractor_init(
     n_keywords_arg: Optional[int], n_keywords_attr: int
@@ -144,7 +144,7 @@ def test_keyword_summary() -> None:
 
 
 @pytest.mark.parametrize(
-    "argv,n_keywords,paths",
+    ("argv", "n_keywords", "paths"),
     [
         ("foo.txt", 5, ["foo.txt"]),
         ("-n 3 foo.txt bar.txt", 3, "foo.txt bar.txt".split()),
