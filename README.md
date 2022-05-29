@@ -34,7 +34,7 @@ poetry run nox
 After entering the virtual environment in which the package is installed, you
 can use the `keyword-extractor` executable to perform keyword extraction from a
 document. You can specify multiple input documents as positional arguments, and
-choose the number of keywords you want extracted with the `-n` flag.
+choose the number of keywords you want to be extracted with the `-n` flag.
 
 ```
 $ poetry shell
