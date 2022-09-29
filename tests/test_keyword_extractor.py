@@ -70,7 +70,7 @@ def test_keyword_extractor_fit() -> None:
     """Test KeywordExtractor.fit."""
     extractor = KeywordExtractor(n_keywords=5)
     keywords = set(extractor.fit(TEST_DOCUMENTS))
-    for word in ["rick", "morty", "forever"]:
+    for word in ("rick", "morty", "forever"):
         assert word in keywords
 
 
