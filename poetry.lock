@@ -329,18 +329,18 @@ python-versions = "*"
 
 [[package]]
 name = "nox"
-version = "2022.1.7"
+version = "2022.8.7"
 description = "Flexible test automation."
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
-argcomplete = ">=1.9.4,<2.0"
+argcomplete = ">=1.9.4,<3.0"
 colorlog = ">=2.6.1,<7.0.0"
 packaging = ">=20.9"
-py = ">=1.4.0,<2.0.0"
-virtualenv = ">=14.0.0"
+py = ">=1.4,<2.0.0"
+virtualenv = ">=14"
 
 [package.extras]
 tox_to_nox = ["jinja2", "tox"]
@@ -862,7 +862,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "74e9d73ba970dd76d2d3d56fa1ec94125b5a4377e85d5eb31cd924ed60507713"
+content-hash = "8274f8f2c999e8dab98e333d11cf2f1dd82946797a12ad29214eb59d0a1373da"
 
 [metadata.files]
 argcomplete = [
@@ -1182,8 +1182,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 nox = [
-    {file = "nox-2022.1.7-py3-none-any.whl", hash = "sha256:efee12f02d39405b16d68f60e7a06fe1fc450ae58669d6cdda8c7f48e3bae9e3"},
-    {file = "nox-2022.1.7.tar.gz", hash = "sha256:b375238cebb0b9df2fab74b8d0ce1a50cd80df60ca2e13f38f539454fcd97d7e"},
+    {file = "nox-2022.8.7-py3-none-any.whl", hash = "sha256:96cca88779e08282a699d672258ec01eb7c792d35bbbf538c723172bce23212c"},
+    {file = "nox-2022.8.7.tar.gz", hash = "sha256:1b894940551dc5c389f9271d197ca5d655d40bdc6ccf93ed6880e4042760a34b"},
 ]
 numpy = [
     {file = "numpy-1.22.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:3d22662b4b10112c545c91a0741f2436f8ca979ab3d69d03d19322aa970f9695"},
