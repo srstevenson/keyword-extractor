@@ -31,8 +31,11 @@ jobs:
       - name: Run checks
         run: poetry run poe check
 
-      - name: Create XML coverage report
-        run: poetry run coverage xml
+      - name: Create coverage report
+        run: coverage lcov
 
-      - name: Upload test coverage report
-        uses: codecov/codecov-action@v3.1.4
+      - name: Upload coverage report
+        uses: romeovs/lcov-reporter-action@v0.3.1
+        with:
+          lcov-file: ./coverage.lcov
+          delete-old-comments: true
