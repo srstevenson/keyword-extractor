@@ -34,7 +34,7 @@ pytest-cov = "^4.0.0"
 nox = "^2022.8.7"
 types-tabulate = "^0.8.11"
 pyupgrade = "^2.38.2"
-flake8-pytest-style = "^1.6.0"
+flake8-pytest-style = "^1.7.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
