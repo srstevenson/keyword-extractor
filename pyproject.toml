@@ -17,6 +17,7 @@ tabulate = ">=0.8.10"
 [tool.poetry.group.dev.dependencies]
 black = ">=22.8"
 flake8 = ">=5.0.4"
+flake8-pyproject = ">=1.2.3"
 flake8-pytest-style = ">=1.7.2"
 isort = ">=5.12.0"
 mypy = ">=0.981"
@@ -32,6 +33,9 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 skip-magic-trailing-comma = true
+
+[tool.flake8]
+ignore = ["E501"]
 
 [tool.isort]
 profile = "black"
