@@ -1,14 +1,23 @@
+"""Extract keywords from documents with spaCy and scikit-learn."""
+
+from __future__ import annotations
+
 import argparse
 import pathlib
 import sys
 import textwrap
-from collections.abc import Generator, Iterable
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
 
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
-from spacy.tokens.token import Token
 from tabulate import tabulate
+
+if TYPE_CHECKING:
+    from collections.abc import Generator, Iterable
+
+    from spacy.tokens.token import Token
+    from typing_extensions import Self
 
 Keyword = str
 
@@ -21,7 +30,7 @@ class Document:
     text: str
 
     @classmethod
-    def from_path(cls, path: pathlib.Path) -> "Document":
+    def from_path(cls: type[Document], path: pathlib.Path) -> Document:
         """Construct a document from a plain text file on disk.
 
         Parameters
@@ -55,7 +64,7 @@ class KeywordSummary:
 
     data: dict[Keyword, KeywordMetadata]
 
-    def __str__(self) -> str:
+    def __str__(self: Self) -> str:
         """Return a formatted table containing the summary.
 
         Returns
@@ -64,11 +73,13 @@ class KeywordSummary:
             Formatted table containing the summary.
 
         """
-        sentences = []
-        for metadata in self.data.values():
-            sentences.append(
-                "\n\n".join(textwrap.fill(sentence) for sentence in metadata.sentences)
+        sentences = [
+            "\n\n".join(
+                textwrap.fill(sentence)
+                for metadata in self.data.values()
+                for sentence in metadata.sentences
             )
+        ]
 
         table = {
             "Word": [metadata.keyword for metadata in self.data.values()],
@@ -90,7 +101,7 @@ class KeywordExtractor:
 
     """
 
-    def __init__(self, n_keywords: int = 10) -> None:
+    def __init__(self: Self, n_keywords: int = 10) -> None:
         """Construct a keyword extractor.
 
         Parameters
@@ -131,7 +142,7 @@ class KeywordExtractor:
             if not token.is_stop and not token.is_punct:
                 yield token.lemma_.lower()
 
-    def fit(self, documents: Iterable[Document]) -> list[Keyword]:
+    def fit(self: Self, documents: Iterable[Document]) -> list[Keyword]:
         """Fit the keyword extractor to documents.
 
         This finds the most prevalent keywords, applying tf-idf across
@@ -160,7 +171,7 @@ class KeywordExtractor:
         self.keywords.update(self.tfidf.get_feature_names_out())
         return list(self.keywords)
 
-    def transform(self, documents: Iterable[Document]) -> KeywordSummary:
+    def transform(self: Self, documents: Iterable[Document]) -> KeywordSummary:
         """Extract keyword summary from new documents after fitting.
 
         This method extracts a keyword summary from a new corpus of documents,
@@ -193,7 +204,7 @@ class KeywordExtractor:
             summary[keyword] = metadata
         return KeywordSummary(summary)
 
-    def fit_transform(self, documents: Iterable[Document]) -> KeywordSummary:
+    def fit_transform(self: Self, documents: Iterable[Document]) -> KeywordSummary:
         """Fit to and extract keywords from a single corpus of documents.
 
         This method fits the most common keywords on a corpus of documents, and
@@ -249,5 +260,5 @@ def main() -> None:  # pragma: no cover
     print(summary)
 
 
-if __name__ == "__main__":  # pragma: no cover
+if __name__ == "__main__":
     main()
