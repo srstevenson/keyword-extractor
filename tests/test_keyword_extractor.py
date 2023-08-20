@@ -1,9 +1,10 @@
+"""Tests for keyword_extractor."""
+
 import pathlib
 import textwrap
 from collections.abc import Iterable
 
 import pytest
-
 from keyword_extractor import (
     Document,
     KeywordExtractor,
