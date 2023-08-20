@@ -3,7 +3,7 @@ name = "keyword-extractor"
 version = "0.1.0"
 description = "Extract keywords from documents with spaCy and scikit-learn"
 authors = ["Scott Stevenson <scott@stevenson.io>"]
-license = "ISC"
+license = "MIT"
 
 [tool.poetry.scripts]
 keyword-extractor = "keyword_extractor:main"
