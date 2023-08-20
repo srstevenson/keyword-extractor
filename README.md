@@ -10,21 +10,21 @@ sentences, using the implementation in [scikit-learn][scikit-learn].
 [Poetry][poetry] is used for packaging and dependency management. Install the
 package and its dependencies with:
 
-```bash
+```sh
 poetry install
 ```
 
 You also need to download the language model used for pre-processing:
 
-```bash
+```sh
 poetry run python3 -m spacy download en_core_web_sm
 ```
 
-To check everything is working, run the linting, type checking, and unit testing
-with [Nox][nox]:
+To check that the code is formatted, free of linting errors, and that the test
+suite passes, run:
 
-```bash
-poetry run nox
+```sh
+poetry run poe check
 ```
 
 After entering the virtual environment in which the package is installed, you
@@ -120,7 +120,6 @@ $ keyword-extractor example_doc.txt
 ╘═════════╧═══════════════╧═════════════════╧═══════════════════════════════════════════════════════════════════════╛
 ```
 
-[nox]: https://nox.thea.codes/
 [poetry]: https://python-poetry.org/
 [scikit-learn]: https://scikit-learn.org/
 [spacy]: https://spacy.io/
