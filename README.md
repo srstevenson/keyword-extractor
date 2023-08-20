@@ -1,9 +1,5 @@
 # keyword-extractor
 
-[![Licence](https://img.shields.io/github/license/srstevenson/keyword-extractor?label=Licence&color=blue)](https://github.com/srstevenson/keyword-extractor/blob/main/LICENCE)
-[![CI status](https://github.com/srstevenson/keyword-extractor/workflows/CI/badge.svg)](https://github.com/srstevenson/keyword-extractor/actions)
-[![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/keyword-extractor?label=Coverage)](https://app.codecov.io/gh/srstevenson/keyword-extractor)
-
 A toy package for extracting keywords from plain text documents. Pre-processing
 is carried out using [spaCy][spacy] (tokenisation, removal of stop words, and
 lemmatisation) and keywords are selected by applying [tf-idf][tf-idf] over
