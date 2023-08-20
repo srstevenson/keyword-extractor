@@ -67,19 +67,14 @@ class KeywordSummary:
         sentences = []
         for metadata in self.data.values():
             sentences.append(
-                "\n\n".join(
-                    textwrap.fill(sentence) for sentence in metadata.sentences
-                )
+                "\n\n".join(textwrap.fill(sentence) for sentence in metadata.sentences)
             )
 
         table = {
             "Word": [metadata.keyword for metadata in self.data.values()],
-            "Occurrences": [
-                metadata.occurrences for metadata in self.data.values()
-            ],
+            "Occurrences": [metadata.occurrences for metadata in self.data.values()],
             "Documents": [
-                ", ".join(metadata.document_names)
-                for metadata in self.data.values()
+                ", ".join(metadata.document_names) for metadata in self.data.values()
             ],
             "Sentences": sentences,
         }
@@ -160,8 +155,7 @@ class KeywordExtractor:
             for sentence in document.sents
         )
         self.tfidf.fit(
-            " ".join(token for token in sentence)
-            for sentence in lemmatised_sentences
+            " ".join(token for token in sentence) for sentence in lemmatised_sentences
         )
         self.keywords.update(self.tfidf.get_feature_names_out())
         return list(self.keywords)
@@ -239,18 +233,9 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    parser.add_argument("-n", default=5, type=int, help="Number of keywords to extract")
     parser.add_argument(
-        "-n",
-        default=5,
-        type=int,
-        help="Number of keywords to extract",
-    )
-    parser.add_argument(
-        "paths",
-        nargs="+",
-        metavar="PATH",
-        type=pathlib.Path,
-        help="Input document",
+        "paths", nargs="+", metavar="PATH", type=pathlib.Path, help="Input document"
     )
     return parser.parse_args(argv)
 

@@ -50,9 +50,7 @@ def test_document_from_path() -> None:
     assert document.text == "She sells sea shells on the sea shore."
 
 
-@pytest.mark.parametrize(
-    ("n_keywords_arg", "n_keywords_attr"), [(None, 10), (5, 5)]
-)
+@pytest.mark.parametrize(("n_keywords_arg", "n_keywords_attr"), [(None, 10), (5, 5)])
 def test_keyword_extractor_init(
     n_keywords_arg: int | None, n_keywords_attr: int
 ) -> None:
@@ -121,10 +119,7 @@ def test_keyword_summary() -> None:
     """Test KeywordSummary."""
     data = {
         "keyword": KeywordMetadata(
-            "keyword",
-            2,
-            {"doc.txt"},
-            ["this contains keyword", "keyword is here too"],
+            "keyword", 2, {"doc.txt"}, ["this contains keyword", "keyword is here too"]
         )
     }
     summary = KeywordSummary(data)
