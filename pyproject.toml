@@ -19,22 +19,22 @@ license = "ISC"
 keyword-extractor = "keyword_extractor:main"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-scikit-learn = "^1.1"
-spacy = "^3.4.1"
-tabulate = "^0.8.10"
+python = ">=3.10,<4.0.0"
+scikit-learn = ">=1.1"
+spacy = ">=3.4.1"
+tabulate = ">=0.8.10"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.8"
-flake8 = "^5.0.4"
-flake8-pytest-style = "^1.7.2"
-isort = "^5.12.0"
-mypy = "^0.981"
-nox = "^2022.8.7"
-pytest = "^7.1.3"
-pytest-cov = "^4.0.0"
-pyupgrade = "^2.38.2"
-types-tabulate = "^0.8.11"
+black = ">=22.8"
+flake8 = ">=5.0.4"
+flake8-pytest-style = ">=1.7.2"
+isort = ">=5.12.0"
+mypy = ">=0.981"
+nox = ">=2022.8.7"
+pytest = ">=7.1.3"
+pytest-cov = ">=4.0.0"
+pyupgrade = ">=2.38.2"
+types-tabulate = ">=0.8.11"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

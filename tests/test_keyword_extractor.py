@@ -1,7 +1,6 @@
 import pathlib
 import textwrap
 from collections.abc import Iterable
-from typing import Optional
 
 import pytest
 
@@ -55,7 +54,7 @@ def test_document_from_path() -> None:
     ("n_keywords_arg", "n_keywords_attr"), [(None, 10), (5, 5)]
 )
 def test_keyword_extractor_init(
-    n_keywords_arg: Optional[int], n_keywords_attr: int
+    n_keywords_arg: int | None, n_keywords_attr: int
 ) -> None:
     """Test KeywordExtractor.__init__."""
     if n_keywords_arg is not None:
