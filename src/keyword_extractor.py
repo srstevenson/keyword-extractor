@@ -123,7 +123,7 @@ class KeywordExtractor:
 
     @staticmethod
     def _lemmatise_and_remove_stops(
-        text: Iterable[Token],
+        text: Iterable[Token]
     ) -> Generator[str, None, None]:
         """Lemmatise tokens whilst dropping stop words and punctuation.
 
