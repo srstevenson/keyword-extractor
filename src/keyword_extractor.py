@@ -15,9 +15,9 @@ from tabulate import tabulate
 
 if TYPE_CHECKING:
     from collections.abc import Generator, Iterable
+    from typing import Self
 
     from spacy.tokens.token import Token
-    from typing_extensions import Self
 
 Keyword = str
 

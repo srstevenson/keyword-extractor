@@ -9,7 +9,7 @@ license = "MIT"
 keyword-extractor = "keyword_extractor:main"
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4.0.0"
+python = ">=3.12,<4.0.0"
 scikit-learn = ">=1.1"
 spacy = ">=3.4.1"
 tabulate = ">=0.8.10"
@@ -67,7 +67,7 @@ check = ["lint", "test"]
 addopts = "--cov=keyword_extractor --cov-report=term-missing"
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py312"
 select = ["ALL"]
 ignore = ["COM812", "D203", "D213", "INP001", "ISC001", "PLR2004", "S101", "T201"]
 
