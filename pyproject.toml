@@ -51,12 +51,12 @@ module = "sklearn.feature_extraction.text"
 ignore_missing_imports = true
 
 [tool.poe.tasks]
-_ruff_fix = "ruff --fix ."
+_ruff_check_fix = "ruff check --fix ."
 _ruff_fmt = "ruff format ."
-fmt = ["_ruff_fix", "_ruff_fmt"]
+fmt = ["_ruff_check_fix", "_ruff_fmt"]
 
 _ruff_fmt_check = "ruff format --check ."
-_ruff_check = "ruff ."
+_ruff_check = "ruff check ."
 _mypy = "mypy ."
 lint = ["_ruff_fmt_check", "_ruff_check", "_mypy"]
 
@@ -68,11 +68,13 @@ addopts = "--cov=keyword_extractor --cov-report=term-missing"
 
 [tool.ruff]
 target-version = "py312"
-select = ["ALL"]
-ignore = ["COM812", "D203", "D213", "INP001", "ISC001", "PLR2004", "S101", "T201"]
 
 [tool.ruff.format]
 skip-magic-trailing-comma = true
 
-[tool.ruff.isort]
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "D203", "D213", "INP001", "ISC001", "PLR2004", "S101", "T201"]
+
+[tool.ruff.lint.isort]
 split-on-trailing-comma = false
